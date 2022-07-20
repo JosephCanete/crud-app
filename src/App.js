@@ -10,10 +10,10 @@ export default function App() {
 
   return (
     <div>
-      <h1>Counter {counter}</h1>
+      {/* <h1>Counter {counter}</h1>
       <button onClick={() => dispatch(increment(5))}>Increment</button>
       <button onClick={() => dispatch(decrement(10))}>Decrement</button>
-      {isLogged && <h3>Sensitive information!!!</h3>}
+      {isLogged && <h3>Sensitive information!!!</h3>} */}
       <Home />
     </div>
   );

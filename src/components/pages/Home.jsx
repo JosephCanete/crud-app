@@ -1,15 +1,14 @@
-import Navigation from "./Navigation";
 import { useSelector } from "react-redux";
+import Navigation from "./Navigation";
 import Input from "../forms/Input";
+import Container from "@mui/material/Container";
 
 export default function Home() {
   const counterFromHome = useSelector((state) => state.counter);
   return (
-    <>
-      <h1>Home Component</h1>
-      <h4>Let's render counter as well {counterFromHome}</h4>
+    <Container maxWidth="lg">
       <Navigation />
       <Input label="Name" />
-    </>
+    </Container>
   );
 }
