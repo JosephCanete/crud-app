@@ -1,5 +1,6 @@
 import React from "react";
 import Home from "./components/pages/Home";
+import Loader from "./Utils/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "./redux/actions/action";
 
@@ -14,7 +15,7 @@ export default function App() {
       <button onClick={() => dispatch(increment(5))}>Increment</button>
       <button onClick={() => dispatch(decrement(10))}>Decrement</button>
       {isLogged && <h3>Sensitive information!!!</h3>} */}
-      <Home />
+      {isLogged ? <Loader /> : <Home />}
     </div>
   );
 }
