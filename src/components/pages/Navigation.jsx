@@ -53,7 +53,7 @@ export default function Navigation() {
         </Link>
       </BottomNavigation>
 
-      {/* <Routes>
+      <Routes>
         <Route exact path="/">
           <Home />
         </Route>
@@ -66,7 +66,7 @@ export default function Navigation() {
         <Route path="/view-result">
           <ResultForm />
         </Route>
-      </Routes> */}
+      </Routes>
     </Router>
   );
 }
