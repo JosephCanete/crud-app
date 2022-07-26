@@ -15,7 +15,7 @@ export default function Cards({ data }) {
 
   return (
     <>
-      <Card maxWidth="xs" style={{ margin: "3rem 2rem" }}>
+      <Card style={{ margin: "3rem 2rem" }}>
         <CardContent>
           <TextField
             InputProps={{ disableUnderline: true }}
@@ -23,7 +23,6 @@ export default function Cards({ data }) {
             id="standard-basic"
             value="Untitled form"
             variant="standard"
-            maxWidth="100%"
             style={{ marginBottom: "2rem" }}
           />
           <Typography gutterBottom variant="h5" component="div">
@@ -39,7 +38,7 @@ export default function Cards({ data }) {
           </Typography>
         </CardContent>
       </Card>
-      <Card maxWidth="xs" style={{ margin: "3rem 2rem" }}>
+      <Card style={{ margin: "3rem 2rem" }}>
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             What do you want to be when you grow up?
@@ -47,8 +46,9 @@ export default function Cards({ data }) {
           <FormControl>
             <FormLabel>Select one answer below:</FormLabel>
             <RadioGroup defaultValue="null" name="radio-buttons-group">
-              {defaultOption.map((item) => (
+              {defaultOption.map((item, index) => (
                 <FormControlLabel
+                  key={index}
                   value={item}
                   control={<Radio />}
                   label={item}
@@ -59,7 +59,7 @@ export default function Cards({ data }) {
         </CardContent>
       </Card>
 
-      <Card maxWidth="xs" style={{ margin: "3rem 2rem" }}>
+      <Card style={{ margin: "3rem 2rem" }}>
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             What do you want to be when you grow up?
@@ -68,8 +68,9 @@ export default function Cards({ data }) {
             <FormLabel>Select one answer below:</FormLabel>
             <RadioGroup defaultValue="null" name="radio-buttons-group">
               {isRadio ? (
-                defaultOption.map((item) => (
+                defaultOption.map((item, index) => (
                   <FormControlLabel
+                    key={index}
                     value={item}
                     control={<Radio />}
                     label={item}
@@ -77,7 +78,6 @@ export default function Cards({ data }) {
                 ))
               ) : (
                 <TextField
-                  maxWidth="auto"
                   label="name"
                   id="standard-basic"
                   variant="standard"
@@ -88,7 +88,7 @@ export default function Cards({ data }) {
         </CardContent>
       </Card>
 
-      <Card maxWidth="xs" style={{ margin: "3rem 2rem" }}>
+      <Card style={{ margin: "3rem 2rem" }}>
         <CardContent>
           <Typography gutterBottom variant="h6" component="div">
             What do you want to be when you grow up?
@@ -96,8 +96,9 @@ export default function Cards({ data }) {
           <FormControl>
             <FormLabel>Select one answer below:</FormLabel>
             <RadioGroup defaultValue="null" name="radio-buttons-group">
-              {defaultOption.map((item) => (
+              {defaultOption.map((item, index) => (
                 <FormControlLabel
+                  key={index}
                   value={item}
                   control={<Radio />}
                   label={item}
