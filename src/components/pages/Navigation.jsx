@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import CreateForm from "./CreateForm";
 import AnswerForm from "./AnswerForm";
@@ -16,55 +16,44 @@ export default function Navigation() {
 
   return (
     <Router>
-      <BottomNavigation value={navigation}>
-        <Link to="/">
-          <BottomNavigationAction
-            id="home"
-            color="secondary"
-            label="Home"
-            icon={<HomeIcon />}
-          />
-        </Link>
-        <Link to="/create-form">
-          <BottomNavigationAction
-            id="createForm"
-            color="secondary"
-            label="Create Form"
-            icon={<CreateIcon />}
-          />
-        </Link>
-
-        <Link to="/answer-form">
-          <BottomNavigationAction
-            id="answerForm"
-            color="secondary"
-            label="Answer Form"
-            icon={<QuestionAnswerIcon />}
-          />
-        </Link>
-
-        <Link to="/view-result">
-          <BottomNavigationAction
-            id="viewResult"
-            color="secondary"
-            label="View Result"
-            icon={<ReviewsIcon />}
-          />
-        </Link>
-      </BottomNavigation>
-
       <Routes>
-        <Route exact path="/">
-          <Home />
+        <Route exact path="/" element={<Home />}>
+          {/* <BottomNavigationAction
+              id="home"
+              color="secondary"
+              label="Home"
+              icon={<HomeIcon />}
+            /> */}
+          Home
         </Route>
-        <Route path="/create-form">
-          <CreateForm />
+        <Route exact path="create-form" element={<CreateForm />}>
+          {/* <BottomNavigationAction
+              id="createForm"
+              color="secondary"
+              label="Create Form"
+              icon={<CreateIcon />}
+            /> */}
+          Create Form
         </Route>
-        <Route path="/answer-form">
-          <AnswerForm />
+
+        <Route exact path="answer-form" element={<AnswerForm />}>
+          {/* <BottomNavigationAction
+              id="answerForm"
+              color="secondary"
+              label="Answer Form"
+              icon={<QuestionAnswerIcon />}
+            /> */}
+          Answer Form
         </Route>
-        <Route path="/view-result">
-          <ResultForm />
+
+        <Route exact path="view-result" element={<ResultForm />}>
+          {/* <BottomNavigationAction
+              id="viewResult"
+              color="secondary"
+              label="View Result"
+              icon={<ReviewsIcon />}
+            /> */}
+          View Result
         </Route>
       </Routes>
     </Router>
