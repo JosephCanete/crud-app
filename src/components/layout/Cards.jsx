@@ -12,18 +12,20 @@ import { useState, useEffect } from "react";
 export default function Cards({ data }) {
   const defaultOption = ["Games", "Programming", "Motorcycling", "Biking"];
   const [isRadio, setIsRadio] = useState(false);
+  const [title, setTitle] = useState("Untitled form");
 
   return (
     <>
       <Card style={{ margin: "3rem 2rem" }}>
         <CardContent>
           <TextField
-            InputProps={{ disableUnderline: true }}
+            style={{ marginBottom: "2rem" }}
             component="div"
             id="standard-basic"
-            value="Untitled form"
+            value={title}
             variant="standard"
-            style={{ marginBottom: "2rem" }}
+            placeholder="Form title.."
+            onChange={(event) => setTitle(event.currentTarget.value)}
           />
           <Typography gutterBottom variant="h5" component="div">
             Lorem Ipsum is simply dummy text of the printing and typesetting
