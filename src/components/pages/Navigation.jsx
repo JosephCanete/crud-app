@@ -75,7 +75,7 @@ const ResponsiveAppBar = () => {
               marginLeft: "2rem",
             }}
           >
-            Mon Custom Form
+            Custom Form
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
