@@ -1,6 +1,6 @@
 import React from "react";
 import Home from "./components/pages/Home";
-import Loader from "./Utils/Loader";
+import Loader from "./utils/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "./redux/actions/action";
 

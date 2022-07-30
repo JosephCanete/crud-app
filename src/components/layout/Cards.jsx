@@ -8,71 +8,9 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import TextField from "@mui/material/TextField";
 import React, { useState, useEffect } from "react";
+import { mockContent } from "../../utils/MockData";
 
 export default function Cards({ data }) {
-  const mockContent = [
-    {
-      headerTitle: "What is your name?",
-      questionType: "single",
-      answer: "",
-    },
-    {
-      headerTitle: "What do you want to be when you grow up?",
-      questionType: "multi",
-      answer: [
-        "Web Developer",
-        "Node Js Developer",
-        "Data Analyst",
-        "React Developer",
-      ],
-    },
-    {
-      headerTitle: "What is your name?",
-      questionType: "single",
-      answer: "",
-    },
-    {
-      headerTitle: "What do you want to be when you grow up?",
-      questionType: "multi",
-      answer: [
-        "Web Developer",
-        "Node Js Developer",
-        "Data Analyst",
-        "React Developer",
-      ],
-    },
-    {
-      headerTitle: "What is your name?",
-      questionType: "single",
-      answer: "",
-    },
-    {
-      headerTitle: "What do you want to be when you grow up?",
-      questionType: "multi",
-      answer: [
-        "Web Developer",
-        "Node Js Developer",
-        "Data Analyst",
-        "React Developer",
-      ],
-    },
-    {
-      headerTitle: "What is your name?",
-      questionType: "single",
-      answer: "",
-    },
-    {
-      headerTitle: "What do you want to be when you grow up?",
-      questionType: "multi",
-      answer: [
-        "Web Developer",
-        "Node Js Developer",
-        "Data Analyst",
-        "React Developer",
-      ],
-    },
-  ];
-
   const defaultOption = ["Games", "Programming", "Motorcycling", "Biking"];
   const [isRadio, setIsRadio] = useState(false);
   const [title, setTitle] = useState("Untitled form");
@@ -135,11 +73,11 @@ export default function Cards({ data }) {
                   <>
                     <FormLabel>Answer here:</FormLabel>
                     <TextField
-                      style={{ marginBottom: "2rem" }}
-                      component="div"
+                      multiline={true}
                       id="standard-basic"
-                      value={""}
                       variant="standard"
+                      size="medium"
+                      sx={{ width: "50rem" }}
                     />
                   </>
                 )}
