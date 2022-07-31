@@ -3,7 +3,7 @@ export const mockContent = [
     headerTitle: "What is your name?",
     questionType: "single",
     answer: "",
-    required: "true",
+    required: false,
   },
   {
     headerTitle: "What do you want to be when you grow up?",
@@ -14,13 +14,13 @@ export const mockContent = [
       "Data Analyst",
       "React Developer",
     ],
-    required: "true",
+    required: true,
   },
   {
     headerTitle: "What is your name?",
     questionType: "single",
     answer: "",
-    required: "true",
+    required: true,
   },
   {
     headerTitle: "What do you want to be when you grow up?",
@@ -31,13 +31,13 @@ export const mockContent = [
       "Data Analyst",
       "React Developer",
     ],
-    required: "true",
+    required: true,
   },
   {
     headerTitle: "What is your name?",
     questionType: "single",
     answer: "",
-    required: "true",
+    required: true,
   },
   {
     headerTitle: "What do you want to be when you grow up?",
@@ -48,13 +48,13 @@ export const mockContent = [
       "Data Analyst",
       "React Developer",
     ],
-    required: "true",
+    required: true,
   },
   {
     headerTitle: "What is your name?",
     questionType: "single",
     answer: "",
-    required: "true",
+    required: true,
   },
   {
     headerTitle: "What do you want to be when you grow up?",
@@ -65,6 +65,6 @@ export const mockContent = [
       "Data Analyst",
       "React Developer",
     ],
-    required: "true",
+    required: true,
   },
 ];
