@@ -7,6 +7,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import TextField from "@mui/material/TextField";
+import Required from "../../utils/Required";
+import Optional from "../../utils/Optional";
 import React, { useState, useEffect } from "react";
 import { mockContent } from "../../utils/MockData";
 
@@ -49,6 +51,7 @@ export default function Cards({ data }) {
               <FormControl>
                 <Typography gutterBottom variant="h6" component="div">
                   {item.headerTitle}
+                  {item.required ? <Required /> : <Optional />}
                 </Typography>
                 {item.questionType === "multi" ? (
                   <>
