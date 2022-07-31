@@ -57,7 +57,7 @@ export default function Cards({ data }) {
                   <>
                     <FormLabel>Select one answer below:</FormLabel>
                     {item.answer.map((answer, index) => (
-                      <>
+                      <React.Fragment key={index}>
                         <RadioGroup
                           defaultValue="null"
                           name="radio-buttons-group"
@@ -69,7 +69,7 @@ export default function Cards({ data }) {
                             label={answer}
                           />
                         </RadioGroup>
-                      </>
+                      </React.Fragment>
                     ))}
                   </>
                 ) : (
