@@ -3,6 +3,7 @@ import Home from "./components/pages/Home";
 import Loader from "./utils/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { increment, decrement } from "./redux/actions/action";
+import Landing from "./components/pages/Landing";
 
 export default function App() {
   const counter = useSelector((state) => state.counter);
@@ -15,7 +16,8 @@ export default function App() {
       <button onClick={() => dispatch(increment(5))}>Increment</button>
       <button onClick={() => dispatch(decrement(10))}>Decrement</button>
       {isLogged && <h3>Sensitive information!!!</h3>} */}
-      {isLogged ? <Loader /> : <Home />}
+      {/* {isLogged ? <Loader /> : <Home />} */}
+      <Landing />
     </div>
   );
 }
