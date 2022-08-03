@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FormLabel from "@mui/material/FormLabel";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -8,6 +8,8 @@ import CardContent from "@mui/material/CardContent";
 import FormControl from "@mui/material/FormControl";
 
 export default function CardChild({ item }) {
+  const [value, setValue] = useState("");
+
   return (
     <CardContent>
       <FormControl>
@@ -16,7 +18,10 @@ export default function CardChild({ item }) {
             <FormLabel>Select one answer below:</FormLabel>
             {item.answer.map((answer, index) => (
               <React.Fragment key={index}>
-                <RadioGroup defaultValue="null" name="radio-buttons-group">
+                <RadioGroup
+                  value={value}
+                  onChange={(event) => setValue(event.target.value)}
+                >
                   <FormControlLabel
                     value={answer}
                     control={<Radio />}

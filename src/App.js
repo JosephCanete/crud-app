@@ -16,8 +16,8 @@ export default function App() {
       <button onClick={() => dispatch(increment(5))}>Increment</button>
       <button onClick={() => dispatch(decrement(10))}>Decrement</button>
       {isLogged && <h3>Sensitive information!!!</h3>} */}
-      {/* {isLogged ? <Loader /> : <Home />} */}
-      <Landing />
+      {isLogged ? <Loader /> : <Home />}
+      {/* <Landing /> */}
     </div>
   );
 }
