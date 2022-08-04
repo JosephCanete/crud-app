@@ -6,6 +6,7 @@ import Radio from "@mui/material/Radio";
 import TextField from "@mui/material/TextField";
 import CardContent from "@mui/material/CardContent";
 import FormControl from "@mui/material/FormControl";
+import CardTitle from "./CardTitle";
 
 export default function CardChild({ item }) {
   const [value, setValue] = useState("");
@@ -13,6 +14,7 @@ export default function CardChild({ item }) {
   return (
     <CardContent>
       <FormControl>
+        <CardTitle item={item} />
         {item.questionType === "multi" ? (
           <>
             <FormLabel>Select one answer below:</FormLabel>

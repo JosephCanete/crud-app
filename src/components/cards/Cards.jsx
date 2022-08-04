@@ -25,7 +25,6 @@ export default function Cards({ data }) {
       {mockContent.map((item, index) => (
         <React.Fragment key={index}>
           <Card style={{ margin: "3rem 2rem" }}>
-            <CardTitle item={item} />
             <CardChild item={item} />
           </Card>
         </React.Fragment>
