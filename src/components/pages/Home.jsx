@@ -1,14 +1,21 @@
-import { useSelector } from "react-redux";
 import Navigation from "./Navigation";
 import Container from "@mui/material/Container";
-import Cards from "../cards/Cards";
+import { Routes, Route } from "react-router-dom";
+import CreateForm from "./CreateForm";
+import ResultForm from "./ResultForm";
+import AnswerForm from "./AnswerForm";
+import Landing from "./Landing";
 
 export default function Home() {
-  const counterFromHome = useSelector((state) => state.counter);
   return (
     <Container maxWidth="lg">
       <Navigation />
-      <Cards />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/Answer" element={<AnswerForm />} />
+        <Route path="/Create" element={<CreateForm />} />
+        <Route path="/Result" element={<ResultForm />} />
+      </Routes>
     </Container>
   );
 }

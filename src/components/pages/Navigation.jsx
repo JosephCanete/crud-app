@@ -1,4 +1,4 @@
-import { useState } from "react";
+import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -13,29 +13,14 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
-const ResponsiveAppBar = () => {
-  const pages = [
-    {
-      header: "Home",
-      routes: "/",
-    },
-    {
-      header: "Create Form",
-      routes: "/create-form",
-    },
-    {
-      header: "Form List",
-      routes: "/form-list",
-    },
-    {
-      header: "Result",
-      routes: "/result",
-    },
-  ];
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
+import { Link } from "react-router-dom";
 
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
+const pages = ["Create", "Answer", "Result"];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
+const ResponsiveAppBar = () => {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -62,8 +47,6 @@ const ResponsiveAppBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -72,10 +55,11 @@ const ResponsiveAppBar = () => {
               letterSpacing: ".3rem",
               color: "inherit",
               textDecoration: "none",
-              marginLeft: "2rem",
             }}
           >
-            Custom Form
+            <Link to={`/`} style={{ textDecoration: "none", color: "white" }}>
+              Custom Form
+            </Link>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -108,8 +92,15 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page.header} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page.header}</Typography>
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <Link
+                      style={{ textDecoration: "none", color: "black" }}
+                      to={`/${page}`}
+                    >
+                      {page}
+                    </Link>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -117,23 +108,44 @@ const ResponsiveAppBar = () => {
           <InsertDriveFileIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
-
+          <Typography
+            variant="h5"
+            noWrap
+            sx={{
+              mr: 2,
+              display: { xs: "flex", md: "none" },
+              flexGrow: 1,
+              fontFamily: "monospace",
+              fontWeight: 700,
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            <Link to={`/`} style={{ textDecoration: "none", color: "white" }}>
+              Custom Form
+            </Link>{" "}
+          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page.header}
-                href={page.routes}
-                onClick={(event) => event.preventDefault()}
+                key={page}
+                onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page.header}
+                <Link
+                  style={{ textDecoration: "none", color: "white" }}
+                  to={`/${page}`}
+                >
+                  {page}
+                </Link>
               </Button>
             ))}
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 2 }}>
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/assets/me.png" />
               </IconButton>
             </Tooltip>
