@@ -41,7 +41,6 @@ export default function CardChild({ item }) {
               id="standard-basic"
               variant="standard"
               size="medium"
-              sx={{ width: "50rem" }}
             />
           </>
         )}
