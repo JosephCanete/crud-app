@@ -9,7 +9,14 @@ import FormControl from "@mui/material/FormControl";
 import CardTitle from "./CardTitle";
 
 export default function CardChild({ item }) {
-  const [value, setValue] = useState("");
+  const [radioValue, setRadioValue] = useState("");
+  const [fieldValue, setFieldValue] = useState("");
+  const [error, setError] = useState(false);
+
+  const fieldValidator = (event) => {
+    //Check if textfields are required
+    item.required && !event.target.value ? setError(true) : setError(false);
+  };
 
   return (
     <CardContent>
@@ -21,8 +28,8 @@ export default function CardChild({ item }) {
             {item.answer.map((answer, index) => (
               <React.Fragment key={index}>
                 <RadioGroup
-                  value={value}
-                  onChange={(event) => setValue(event.target.value)}
+                  value={radioValue}
+                  onChange={(event) => setRadioValue(event.target.value)}
                 >
                   <FormControlLabel
                     value={answer}
@@ -41,6 +48,8 @@ export default function CardChild({ item }) {
               id="standard-basic"
               variant="standard"
               size="medium"
+              error={error}
+              onBlur={(event) => fieldValidator(event)}
             />
           </>
         )}
