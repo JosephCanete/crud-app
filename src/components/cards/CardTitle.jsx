@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "@mui/material/Typography";
-import Required from "../../utils/Required";
-import Optional from "../../utils/Optional";
+import Required from "../../utility/Required";
+import Optional from "../../utility/Optional";
 
 export default function CardTitle({ item }) {
   return (
