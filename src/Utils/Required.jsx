@@ -1,5 +1,5 @@
-import React from "react";
+import { error } from "../utils/styles";
 
 export default function Required() {
-  return <span style={{ color: "#d93025" }}>{` *`}</span>;
+  return <span style={{ color: error }}>{` *`}</span>;
 }
