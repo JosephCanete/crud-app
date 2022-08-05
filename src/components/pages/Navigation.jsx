@@ -15,7 +15,20 @@ import InsertDriveFileIcon from "@mui/icons-material/InsertDriveFile";
 
 import { Link } from "react-router-dom";
 
-const pages = ["Create", "Answer", "Result"];
+const pages = [
+  {
+    header: "Create Form",
+    routes: "create",
+  },
+  {
+    header: "Answer Form",
+    routes: "answer",
+  },
+  {
+    header: "Result Form",
+    routes: "result",
+  },
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -92,13 +105,13 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.header} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
                     <Link
                       style={{ textDecoration: "none", color: "black" }}
-                      to={`/${page}`}
+                      to={`/${page.routes}`}
                     >
-                      {page}
+                      {page.header}
                     </Link>
                   </Typography>
                 </MenuItem>
@@ -129,15 +142,15 @@ const ResponsiveAppBar = () => {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.header}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <Link
                   style={{ textDecoration: "none", color: "white" }}
-                  to={`/${page}`}
+                  to={`/${page.routes}`}
                 >
-                  {page}
+                  {page.header}
                 </Link>
               </Button>
             ))}
