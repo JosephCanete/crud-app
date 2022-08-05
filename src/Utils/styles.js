@@ -1,3 +1,3 @@
-const error = "d93025";
+const error = "#d93025";
 
 export { error };
