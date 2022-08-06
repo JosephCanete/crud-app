@@ -5,7 +5,7 @@ import CardChild from "./CardChild";
 import Button from "@mui/material/Button";
 import CardHeader from "./CardHeader";
 import FormTitle from "./FormTitle";
-import { mockContent } from "../../utils/MockData";
+import { mockContent } from "../../utility/MockData";
 
 export default function Cards({ data }) {
   return (
