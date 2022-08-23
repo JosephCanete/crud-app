@@ -23,7 +23,7 @@ export default function CreateForm() {
 
   return (
     <div>
-      {cardList.length === 0 && (
+      {cardList.length === 0 ? (
         <Button
           style={{ margin: "2rem" }}
           variant="outlined"
@@ -32,24 +32,40 @@ export default function CreateForm() {
         >
           START ADDING HERE
         </Button>
-      )}
-      {cardList.map((item, index) => (
-        <Card style={{ margin: "3rem 2rem" }} key={index}>
-          <CardContent>{item}</CardContent>
-          {cardList.length - 1 === index && (
-            <Button variant="text" color="success" onClick={spawnCards}>
-              Add MORE
-            </Button>
-          )}
+      ) : (
+        <>
+          {cardList.map((item, index) => (
+            <Card style={{ margin: "3rem 2rem" }} key={index}>
+              <CardContent>{item}</CardContent>
+              {cardList.length - 1 === index && (
+                <Button
+                  style={{ margin: "1rem" }}
+                  variant="contained"
+                  color="success"
+                  onClick={spawnCards}
+                >
+                  Add MORE
+                </Button>
+              )}
+              <Button
+                style={{ margin: "1rem" }}
+                variant="contained"
+                color="error"
+                onClick={() => removeCards(index)}
+              >
+                REMOVE ITEM
+              </Button>
+            </Card>
+          ))}
           <Button
-            variant="text"
-            color="warning"
-            onClick={() => removeCards(index)}
+            style={{ margin: "1rem" }}
+            variant="contained"
+            color="success"
           >
-            REMOVE ITEM
+            Submit Form
           </Button>
-        </Card>
-      ))}
+        </>
+      )}
     </div>
   );
 }
